@@ -82,6 +82,20 @@ Example Response:
   "timestamp": "2025-10-11T18:45:32"
 }
 ```
+## Frontend
+The frontend is built using Angular 17 and provides the user interface for the Job Portal System. 
+It communicates with the backend REST APIs to allow users to:
+
+- Job Seekers: Browse jobs, apply for jobs, track applications.
+- Companies: Post, edit, and delete job openings, manage company profiles.
+- Admin: View overall system activity.
+
+### Running Frontend
+1. Navigate to the frontend folder:
+2. cd frontend--  Install dependencies:
+3. npm install-- Run the development server:
+4. ng serve -- Open your browser at: http://localhost:4200/
+
 
 ## Future Enhancements
 
