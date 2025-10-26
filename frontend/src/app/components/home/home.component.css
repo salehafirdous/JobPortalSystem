@@ -1,0 +1,8 @@
+.bg-image {
+  background-image: url('/assets/images/home.jpg'); /* leading / is important */
+  min-height: 100vh;
+  padding: 50px 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

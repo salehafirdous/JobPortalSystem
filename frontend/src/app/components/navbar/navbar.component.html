@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-gradient-purple-blue">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://cdn-icons-png.flaticon.com/512/6427/6427283.png" alt="Job Search Logo" width="30" height="30" class="d-inline-block align-text-top">
+      Job Portal
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/companies">Companies</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn && user?.role === 'RECRUITER'">
+          <a class="nav-link" routerLink="/add-job">Add Job</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" routerLink="/applications">My Applications</a>
+        </li>
+        <li class="nav-item" *ngIf="!isLoggedIn">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="!isLoggedIn">
+          <a class="nav-link" routerLink="/register">Register</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

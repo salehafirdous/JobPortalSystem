@@ -1,0 +1,21 @@
+<div class="container-fluid bg-image fade-in" style="background-image: url(''); min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+  <div class="card shadow col-md-6 mx-auto bg-light bg-opacity-75">
+    <div class="card-body">
+      <h2 class="card-title text-center">Login</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" formControlName="email" [class.is-invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          <div class="invalid-feedback">Valid email is required.</div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" formControlName="password" [class.is-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          <div class="invalid-feedback">Password is required.</div>
+        </div>
+        <div class="alert alert-danger" *ngIf="error">{{ error }}</div>
+        <button type="submit" class="btn btn-primary w-100" [disabled]="loginForm.invalid">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

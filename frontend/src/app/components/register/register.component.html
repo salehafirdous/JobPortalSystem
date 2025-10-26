@@ -1,0 +1,35 @@
+<div class="container-fluid bg-image fade-in" style="background-image: url(''); min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+  <div class="card shadow col-md-6 mx-auto bg-light bg-opacity-75">
+    <div class="card-body">
+      <h2 class="card-title text-center">Register</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="register()" novalidate>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" formControlName="name" [class.is-invalid]="registerForm.get('name')?.invalid && registerForm.get('name')?.touched">
+          <div class="invalid-feedback">Name is required.</div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" formControlName="email" [class.is-invalid]="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+          <div class="invalid-feedback">Valid email is required.</div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" formControlName="password" [class.is-invalid]="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+          <div class="invalid-feedback">Password must be at least 6 characters.</div>
+        </div>
+        <div class="mb-3">
+          <label for="role" class="form-label">Role</label>
+          <select class="form-control" id="role" formControlName="role" [class.is-invalid]="registerForm.get('role')?.invalid && registerForm.get('role')?.touched">
+            <option value="" disabled>Select Role</option>
+            <option value="JOB_SEEKER">Job Seeker</option>
+            <option value="RECRUITER">Recruiter</option>
+            <option value="ADMIN">Admin</option>
+          </select>
+          <div class="invalid-feedback">Role is required.</div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100" [disabled]="registerForm.invalid">Register</button>
+      </form>
+    </div>
+  </div>
+</div>

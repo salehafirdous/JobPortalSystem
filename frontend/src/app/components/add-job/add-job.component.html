@@ -1,0 +1,26 @@
+<div class="container mt-5 fade-in">
+  <h2>Add Job</h2>
+  <form [formGroup]="jobForm" (ngSubmit)="submit()" class="needs-validation" novalidate>
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" formControlName="title" [class.is-invalid]="jobForm.get('title')?.invalid && jobForm.get('title')?.touched">
+      <div class="invalid-feedback">Title is required.</div>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea class="form-control" id="description" formControlName="description" [class.is-invalid]="jobForm.get('description')?.invalid && jobForm.get('description')?.touched"></textarea>
+      <div class="invalid-feedback">Description is required.</div>
+    </div>
+    <div class="mb-3">
+      <label for="location" class="form-label">Location</label>
+      <input type="text" class="form-control" id="location" formControlName="location" [class.is-invalid]="jobForm.get('location')?.invalid && jobForm.get('location')?.touched">
+      <div class="invalid-feedback">Location is required.</div>
+    </div>
+    <div class="mb-3">
+      <label for="companyId" class="form-label">Company ID</label>
+      <input type="number" class="form-control" id="companyId" formControlName="companyId" [class.is-invalid]="jobForm.get('companyId')?.invalid && jobForm.get('companyId')?.touched">
+      <div class="invalid-feedback">Company ID is required.</div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="jobForm.invalid">Submit</button>
+  </form>
+</div>
